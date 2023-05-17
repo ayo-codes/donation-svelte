@@ -16,4 +16,4 @@
       <h1 class="title is-4">Give Generously!</h1>
       <DonateForm />
   </div>
-</div>report
+</div>

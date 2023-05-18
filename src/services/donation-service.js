@@ -58,5 +58,33 @@ export const donationService = {
         });
         axios.defaults.headers.common["Authorization"] = "Bearer" + savedUser.token;
       }
+    },
+
+    async donate(donation) {
+      try {
+        const response = await axios.post(this.baseUrl + "/api/candidates/" + donation.candidate + "/donations", donation);
+        return response.status == 200;
+      } catch (error) {
+        return false;
+      }
+    },
+  
+    async getCandidates() {
+      try {
+        const response = await axios.get(this.baseUrl + "/api/candidates");
+        return response.data;
+      } catch (error) {
+        return [];
+      }
+    },
+  
+    async getDonations() {
+      try {
+        const response = await axios.get(this.baseUrl + "/api/donations");
+        return response.data;
+      } catch (error) {
+        return [];
+      }
     }
+
 };

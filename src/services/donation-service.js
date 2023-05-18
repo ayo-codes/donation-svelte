@@ -4,7 +4,9 @@ import axios from "axios";
 import { latestDonation, user } from "../stores";
 
 export const donationService = {
-    baseUrl: "http://localhost:4000",
+    // baseUrl: "http://localhost:4000",
+
+  baseUrl: "https://dxnatixn.onrender.com",
 
     async login(email, password) {
         try {

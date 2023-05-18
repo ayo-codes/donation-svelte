@@ -3,6 +3,7 @@
   
       import { onMount } from "svelte";
       import { donationService } from "../services/donation-service";
+      import  Coordinates  from "./Coordinates.svelte";
   
       let amount = 0;
   
@@ -13,6 +14,9 @@
       let selectedMethod = "";
   
       let message = "Please donate";
+
+      let lat = 52.160858;
+      let lng = -7.152420;
   
       onMount(async () => {
           candidateList = await donationService.getCandidates();
@@ -25,7 +29,9 @@
             const donation = {
                 amount: amount,
                 method: selectedMethod,
-                candidate: candidate._id
+                candidate: candidate._id,
+                lat: lat,
+                lng:lng
             };
             const success = await donationService.donate(donation);
             if (!success) {
@@ -68,5 +74,6 @@
       <div class="box">
           {message}
       </div>
+      <Coordinates bind:lat bind:lng />
   </form>
   

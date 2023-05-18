@@ -4,10 +4,10 @@
 </script>
 
 <div class="columns is-vcentered">
-  <div class="column is-two-thirds">
+  <div class="column is-half">
       <TitleBar title={'Donation Services Inc.'} subTitle={'Sign up or Log in'} />
   </div>
-  <div class="column">
+  <div class="column is-half">
       <slot> 
         <WelcomeNavigator /> <!-- makes welcomeNavigator the default for the slot position -->
       </slot>

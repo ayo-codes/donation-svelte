@@ -5,9 +5,9 @@
   import DonationMap from "$lib/DonationMap.svelte";
   import { donationService } from "../../services/donation-service";
 
-   beforeUpdate(() => {
-     donationService.checkPageRefresh();
-   });
+   //beforeUpdate(() => {
+     //donationService.checkPageRefresh();
+   //});
 </script>
 
 <Header>
